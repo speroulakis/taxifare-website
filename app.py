@@ -1,6 +1,5 @@
 import streamlit as st
 import requests
-from datetime import datetime
 
 '''
 ## TaxiFareModel front
@@ -12,7 +11,7 @@ place = st.text_input('1st adress')
 arrival = st.text_input('arrival adress')
 
 url1 = 'https://api.opencagedata.com/geocode/v1/json'
-params = {'key' : 'c634615b656f40fb93f7fa5aed8b25ff',
+params = {'key' : st.secrets['key'],
           'q' : place}
 response = requests.get(url1, params)
 test = (response.json())
