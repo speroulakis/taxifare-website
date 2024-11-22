@@ -13,8 +13,10 @@ arrival = st.text_input('arrival adress')
 url1 = 'https://api.opencagedata.com/geocode/v1/json'
 params = {'key' : st.secrets['key'],
           'q' : place}
+print(params['key'])
 response = requests.get(url1, params)
 test = (response.json())
+print(test)
 lat1 = test.get('results')[0].get('geometry').get('lat')
 long1 = test.get('results')[0].get('geometry').get('lng')
 
